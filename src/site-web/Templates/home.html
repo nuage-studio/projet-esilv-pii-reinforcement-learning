@@ -18,8 +18,8 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ url_for('static',filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link href="{{ url_for('static',filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -131,12 +131,10 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                 
                     
-
                     <div class="row">
 
                       
@@ -147,7 +145,24 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary"><b>Interprétabilité Globale</b></h6>
+                                    <h6 class="m-0 font-weight-bold text-primary"><b>Interprétabilité Globale</b>
+                                        <a data-bs-toggle="modal" data-bs-target="#exampleModal"> <img src="https://img.icons8.com/material-outlined/24/000000/info.png"/>
+                                        </a>
+                                        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Explication de l'outils interactif</h5>
+                                                        
+                                                      </div>
+                                                      <div class="modal-body">
+                                                            Différentes combinaisons de caractéristiques sur l'axe vertical et horizontal peuvent être présentées. Par défaut, les observations sont regroupées en fonction de leur position dans un regroupement hiérarchique. Les valeurs de caractéristiques rouges prennent en charge une probabilité plus élevée et les valeurs de caractéristiques bleues diminuent le score. Le tracé est interactif, donc le survoler permet de montrer certaines caractéristiques des observations formant les clusters. Visualisation des points de consigne d'entraînement sur deux clusters explicites. Il est possible de choisir n'importe quel prédicteur le long de l'axe vertical et horizontal, ainsi, par exemple, un effet d'interaction entre les variables explicatives pourrait être obtenu.
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                    </h6>
+
                                 </div>
                                 <!-- Card Body -->
                                 
@@ -155,6 +170,7 @@
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         {%include file_ds%}
+                                
                                     </div>
                 
                                 </div>
@@ -204,15 +220,19 @@
     
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}" ></script>
-    <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
 
+
+    <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}" ></script>
+    
     <!-- Core plugin JavaScript-->
     <script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ url_for('static',filename='js/sb-admin-2.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+    
 
 </html>
