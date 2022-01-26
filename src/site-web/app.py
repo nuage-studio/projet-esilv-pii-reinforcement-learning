@@ -79,17 +79,9 @@ app=Flask(__name__)
 
 
 
-@app.route('/',methods=["GET" , "POST"])
+@app.route('/')
 def index():
-	row=(pd.DataFrame(x_df[x_df["customerID"]==data["customerID"].iloc[0]].iloc[-1]).T)
-	pred=loaded_model.predict(row.drop("customerID",axis=1))[0]
-	file=blackbox(explainer,row)
-
-	row_deep=(pd.DataFrame(x_df_deep[x_df_deep["customerID"]==data["customerID"].iloc[0]].iloc[-1]).T)
-	n=np.asarray(row_deep.drop("customerID",axis=1)).astype(np.float32)
-	pred_deep=deep_model.predict(n)	
-	file_deep=blackbox_deep(explainer_deep,n,row_deep.customerID.values[0])
-	return render_template('index.html',id=data["customerID"].iloc[0],pred=pred,file="./machine_learning/"+file,pred_deep=pred_deep[0][0],file_deep="./deep_learning/"+file_deep,tenure=data["tenure"].iloc[0])
+	return render_template('home.html',file_ds="explainability_global.html")
 
 
 

@@ -1,7 +1,5 @@
 <h1>Faire fonctionner le site web flask</h1>
 
-<h4>ce site fonctionne sous python 3.9.8 <h4>
-
     
 <h2>1ére étape</h2>
 
