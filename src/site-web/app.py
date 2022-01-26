@@ -6,7 +6,6 @@ from io import BytesIO
 import base64
 import shap
 from keras.models import load_model
-from sklearn.preprocessing import StandardScaler
 import numpy as np
 import glob
 
